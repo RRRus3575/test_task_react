@@ -33,13 +33,13 @@ function Filters({ onFilterChange }) {
   const handleTypeChange = (type) => {
     setFilters((prev) => ({
       ...prev,
-      type: prev.type === type ? "" : type, // Сбрасываем тип, если он уже выбран
+      type: prev.type === type ? "" : type,
     }));
   };
 
   // Обработка кнопки поиска
   const handleSearch = () => {
-    onFilterChange(filters); // Передача текущих фильтров в родительский компонент
+    onFilterChange(filters);
   };
 
   return (
