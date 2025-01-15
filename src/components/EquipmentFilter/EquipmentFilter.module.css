@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  margin-bottom: 32px;
+}
+.equipmentFilter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.label {
+  width: 112px;
+  height: 96px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 12px;
+  border: 1px solid #dadde1;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.label:has(input[type="checkbox"]:checked) {
+  border: 1px solid #e44848;
+}

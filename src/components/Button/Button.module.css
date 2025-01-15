@@ -1,8 +1,13 @@
 .button {
   padding: 16px 40px;
   border-radius: 200px;
+  font-size: 16px;
   border: none;
   background-color: #e44848;
   color: #ffffff;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.button:hover {
+  background-color: #d84343;
 }

@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Header from "../components/Header/Header";
 
 function CamperDetailsPage() {
   const { id } = useParams();
@@ -25,19 +26,22 @@ function CamperDetailsPage() {
   }
 
   return (
-    <div>
-      <Link to="/catalog">
+    <>
+      <Header />
+      <div>
+        {/* <Link to="/catalog">
         <button onClick={handleGoBack}>Back to Catalog</button>
-      </Link>
-      <h1>{camper.name}</h1>
-      <p>{camper.description}</p>
-      {/* Дополнительная информация */}
-      <ul>
-        <li>Transmission: {camper.transmission}</li>
-        <li>Engine: {camper.engine}</li>
-        <li>AC: {camper.AC ? "Yes" : "No"}</li>
-      </ul>
-    </div>
+      </Link> */}
+        <h1>{camper.name}</h1>
+        <p>{camper.description}</p>
+        {/* Дополнительная информация */}
+        <ul>
+          <li>Transmission: {camper.transmission}</li>
+          <li>Engine: {camper.engine}</li>
+          <li>AC: {camper.AC ? "Yes" : "No"}</li>
+        </ul>
+      </div>
+    </>
   );
 }
 

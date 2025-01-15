@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import Button from "../Button/Button";
-
-const equipmentOptions = ["AC", "kitchen", "TV", "bathroom", "transmission"];
+import css from "./Filters.module.css";
+import LocationFilter from "../LocationFilter/LocationFilter";
+import TypeFilter from "../TypeFilter/TypeFilter";
+import EquipmentFilter from "../EquipmentFilter/EquipmentFilter";
 
 function Filters({ onFilterChange }) {
   const [filters, setFilters] = useState({
@@ -38,75 +40,31 @@ function Filters({ onFilterChange }) {
     }));
   };
 
-  // Обработка кнопки поиска
-  const handleSearch = () => {
+  // Обработка отправки формы
+  const handleSubmit = (e) => {
+    e.preventDefault();
     onFilterChange(filters);
   };
 
   return (
-    <div>
+    <form onSubmit={handleSubmit} className={css.form}>
       {/* Фильтр по локации */}
-      <div>
-        <label>Location</label>
-        <input
-          type="text"
-          name="location"
-          placeholder="Kyiv, Ukraine"
-          value={filters.location}
-          onChange={handleInputChange}
-          style={{
-            display: "block",
-            margin: "10px 0",
-            padding: "8px",
-            borderRadius: "5px",
-            border: "1px solid #ddd",
-          }}
-        />
-      </div>
-
+      <LocationFilter value={filters.location} onChange={handleInputChange} />
+      <h2 className={css.title}>Filters</h2>
       {/* Фильтры по оборудованию */}
-      <div>
-        <h3>Vehicle equipment</h3>
-        {equipmentOptions.map((item) => (
-          <label key={item}>
-            <input
-              type="checkbox"
-              value={item}
-              onChange={handleCheckboxChange}
-              style={{ marginRight: "5px" }}
-            />
-            {item.toUpperCase()}
-          </label>
-        ))}
-      </div>
+      <EquipmentFilter
+        selectedOptions={filters.equipment}
+        onChange={handleCheckboxChange}
+      />
 
       {/* Тип кузова */}
-      <div>
-        <h3>Vehicle type</h3>
-        {["alcove", "van", "fully integrated"].map((type) => (
-          <button
-            key={type}
-            onClick={() => handleTypeChange(type)}
-            style={{
-              margin: "5px",
-              padding: "10px 15px",
-              border: "1px solid #ddd",
-              borderRadius: "8px",
-              backgroundColor: filters.type === type ? "#f05454" : "#fff",
-              color: filters.type === type ? "#fff" : "#000",
-              cursor: "pointer",
-            }}
-          >
-            {type.charAt(0).toUpperCase() + type.slice(1)} {/* Alcove, Van */}
-          </button>
-        ))}
-      </div>
+      <TypeFilter selectedType={filters.type} onTypeChange={handleTypeChange} />
 
       {/* Кнопка поиска */}
-      <div>
-        <Button onClick={handleSearch}>Search</Button>
+      <div style={{ marginTop: "15px" }}>
+        <Button>Search</Button>
       </div>
-    </div>
+    </form>
   );
 }
 

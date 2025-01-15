@@ -1,0 +1,7 @@
+.section {
+  padding: 48px 64px;
+}
+.catalog {
+  display: flex;
+  gap: 64px;
+}

@@ -1,0 +1,20 @@
+.header {
+  display: flex;
+  padding: 28px 64px;
+  gap: 450px;
+  background-color: #f2f4f7;
+}
+.nav {
+  display: flex;
+  gap: 32px;
+}
+.link {
+  color: #101828;
+  transition: color 0.3s ease;
+}
+.link:hover {
+  color: #d84343;
+}
+.active {
+  color: #d84343;
+}

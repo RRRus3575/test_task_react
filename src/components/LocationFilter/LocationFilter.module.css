@@ -1,0 +1,37 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.search,
+.search:active {
+  display: block;
+  width: 360px;
+  padding: 8px 8px 8px 48px;
+  height: 56px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  background-color: #f7f7f7;
+}
+
+.placeholderColor {
+  color: #6c717b;
+}
+.searchinput {
+  position: relative;
+  color: #101828;
+}
+.map {
+  position: absolute;
+  top: 16px;
+  left: 20px;
+  fill: currentColor;
+}
+.activeColor {
+  color: #101828;
+}
+.label {
+  font-size: 16px;
+  color: #6c717b;
+}
