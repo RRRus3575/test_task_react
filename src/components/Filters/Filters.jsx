@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Button from "../Button/Button";
 
 const equipmentOptions = ["AC", "kitchen", "TV", "bathroom", "transmission"];
 
@@ -67,17 +68,7 @@ function Filters({ onFilterChange }) {
       <div>
         <h3>Vehicle equipment</h3>
         {equipmentOptions.map((item) => (
-          <label
-            key={item}
-            style={{
-              display: "inline-block",
-              margin: "5px",
-              padding: "10px",
-              border: "1px solid #ddd",
-              borderRadius: "8px",
-              cursor: "pointer",
-            }}
-          >
+          <label key={item}>
             <input
               type="checkbox"
               value={item}
@@ -113,20 +104,7 @@ function Filters({ onFilterChange }) {
 
       {/* Кнопка поиска */}
       <div>
-        <button
-          onClick={handleSearch}
-          style={{
-            marginTop: "20px",
-            padding: "10px 20px",
-            backgroundColor: "#f05454",
-            color: "#fff",
-            border: "none",
-            borderRadius: "8px",
-            cursor: "pointer",
-          }}
-        >
-          Search
-        </button>
+        <Button onClick={handleSearch}>Search</Button>
       </div>
     </div>
   );

@@ -1,16 +1,19 @@
 import { Link } from "react-router-dom";
+import Header from "../components/Header/Header";
+import Button from "../components/Button/Button";
 
 function HomePage() {
   return (
-    <div style={{ textAlign: "center", padding: "50px" }}>
-      <h1>Welcome to TravelTrucks</h1>
-      <p>Your adventure starts here!</p>
-      <Link to="/catalog">
-        <button style={{ padding: "10px 20px", fontSize: "16px" }}>
-          View Now
-        </button>
-      </Link>
-    </div>
+    <>
+      <Header />
+      <section className="hero">
+        <h1>Campers of your dreams</h1>
+        <p>You can find everything you want in our catalog</p>
+        <Link to="/catalog">
+          <Button>View Now</Button>
+        </Link>
+      </section>
+    </>
   );
 }
 

@@ -2,7 +2,8 @@ import React, { useEffect, useState, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCampers } from "../store/campersSlice";
 import { Link } from "react-router-dom";
-import Filters from "../components/Filters";
+import Filters from "../components/Filters/Filters";
+import Button from "../components/Button/Button";
 
 function CatalogPage() {
   const dispatch = useDispatch();
@@ -69,26 +70,13 @@ function CatalogPage() {
             <h2>{camper.name}</h2>
             <p>{camper.description}</p>
             <Link to={`/catalog/${camper.id}`}>
-              <button>Show more</button>
+              <Button>Show more</Button>
             </Link>
           </li>
         ))}
       </ul>
       {paginatedCampers.length < filteredCampers.length && (
-        <button
-          onClick={handleLoadMore}
-          style={{
-            padding: "10px 20px",
-            margin: "20px",
-            backgroundColor: "#007bff",
-            color: "#fff",
-            border: "none",
-            borderRadius: "5px",
-            cursor: "pointer",
-          }}
-        >
-          Load More
-        </button>
+        <button onClick={handleLoadMore}>Load More</button>
       )}
       {paginatedCampers.length === 0 && <p>No campers found.</p>}
     </div>
