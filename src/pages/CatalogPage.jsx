@@ -5,7 +5,9 @@ function CatalogPage() {
   return (
     <>
       <Header />
-      <CatalogSection />
+      <main>
+        <CatalogSection />
+      </main>
     </>
   );
 }

@@ -1,5 +1,8 @@
 .container {
   margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
 }
 .radiolist {
   display: flex;

@@ -1,8 +1,10 @@
+header {
+  background-color: #f2f4f7;
+}
 .header {
   display: flex;
-  padding: 28px 64px;
+  padding: 28px 0;
   gap: 450px;
-  background-color: #f2f4f7;
 }
 .nav {
   display: flex;

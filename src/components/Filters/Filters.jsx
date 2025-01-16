@@ -62,7 +62,7 @@ function Filters({ onFilterChange }) {
 
       {/* Кнопка поиска */}
       <div style={{ marginTop: "15px" }}>
-        <Button>Search</Button>
+        <Button type="submit">Search</Button>
       </div>
     </form>
   );

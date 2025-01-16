@@ -100,3 +100,10 @@ input {
   height: 1px;
   margin: -1px;
 }
+.container {
+  width: 1440px;
+  padding-left: 64px;
+  padding-right: 64px;
+  margin-left: auto;
+  margin-right: auto;
+}

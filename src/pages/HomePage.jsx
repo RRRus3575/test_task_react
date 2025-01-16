@@ -5,7 +5,9 @@ function HomePage() {
   return (
     <>
       <Header />
-      <Hero />
+      <main>
+        <Hero />
+      </main>
     </>
   );
 }

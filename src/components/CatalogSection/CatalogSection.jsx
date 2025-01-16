@@ -65,7 +65,7 @@ function CatalogSection() {
     setCurrentPage((prevPage) => prevPage + 1);
   };
   return (
-    <section className={css.section}>
+    <section className={`${css.section} container`}>
       <h1 className="visually-hidden ">Catalog</h1>
       <div className={css.catalog}>
         <Filters onFilterChange={onFilterChange} />
