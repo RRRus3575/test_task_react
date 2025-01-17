@@ -4,6 +4,7 @@ import axios from "axios";
 import Gallery from "../Gallery/Gallery";
 import Tabs from "../Tabs/Tabs";
 import css from "./CamperDetailsSection.module.css";
+import FormDetails from "../FormDetails/FormDetails";
 
 function CamperDetailsSections() {
   const { id } = useParams();
@@ -27,7 +28,6 @@ function CamperDetailsSections() {
       <h1 className="visually-hidden">Catalog details</h1>
       <Gallery camper={camper} />
 
-      {/* Дополнительная информация */}
       <div className={css.details}>
         <div className={css.tabButtons}>
           <button
@@ -47,7 +47,10 @@ function CamperDetailsSections() {
             Reviews
           </button>
         </div>
-        <Tabs camper={camper} activeTab={activeTab} />
+        <div className={css.featursandfeedback}>
+          <Tabs camper={camper} activeTab={activeTab} />
+          <FormDetails />
+        </div>
       </div>
     </div>
   );

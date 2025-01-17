@@ -2,7 +2,7 @@ import React from "react";
 import sprite from "../../assets/sprite.svg";
 import css from "./TypeFilter.module.css";
 
-function TypeFilter({ options, selectedType, onTypeChange }) {
+function TypeFilter({ selectedType, onTypeChange }) {
   return (
     <div className={css.container}>
       <h3>Vehicle type</h3>

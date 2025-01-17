@@ -36,16 +36,14 @@ const campersSlice = createSlice({
   reducers: {
     // Добавление/удаление из избранного
     toggleFavorite(state, action) {
-      const camper = action.payload;
-      const existingIndex = state.favorites.findIndex(
-        (fav) => fav.id === camper.id
-      );
+      const id = action.payload;
+      const existingIndex = state.favorites.indexOf(id);
       if (existingIndex === -1) {
-        state.favorites.push(camper);
+        state.favorites.push(id);
       } else {
         state.favorites.splice(existingIndex, 1);
       }
-      // Обновляем избранное в localStorage
+
       localStorage.setItem("favorites", JSON.stringify(state.favorites));
     },
 

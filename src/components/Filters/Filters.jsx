@@ -48,20 +48,17 @@ function Filters({ onFilterChange }) {
 
   return (
     <form onSubmit={handleSubmit} className={css.form}>
-      {/* Фильтр по локации */}
       <LocationFilter value={filters.location} onChange={handleInputChange} />
       <h2 className={css.title}>Filters</h2>
-      {/* Фильтры по оборудованию */}
+
       <EquipmentFilter
         selectedOptions={filters.equipment}
         onChange={handleCheckboxChange}
       />
 
-      {/* Тип кузова */}
       <TypeFilter selectedType={filters.type} onTypeChange={handleTypeChange} />
 
-      {/* Кнопка поиска */}
-      <div style={{ marginTop: "15px" }}>
+      <div>
         <Button type="submit">Search</Button>
       </div>
     </form>

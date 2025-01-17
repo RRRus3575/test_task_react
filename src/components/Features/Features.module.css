@@ -1,0 +1,44 @@
+.listtag {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 100px;
+}
+.features,
+.reviews {
+  padding: 52px;
+}
+
+.details ul,
+.reviews ul {
+  list-style: none;
+  padding: 0;
+}
+
+.details li,
+.reviews li {
+  margin-bottom: 8px;
+}
+.features {
+  border: 1px solid #dadde1;
+  border-radius: 10px;
+  background-color: #f7f7f7;
+}
+.title {
+  font-size: 20px;
+  margin-bottom: 24px;
+}
+.characteristics {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 24px;
+  border-top: 1px solid #dadde1;
+}
+.characteristics li {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 500;
+}

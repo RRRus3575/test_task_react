@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { toggleFavorite } from "../../store/campersSlice";
 import Button from "../Button/Button";
 import { Link } from "react-router-dom";
 import css from "./CatalogList.module.css";
@@ -7,23 +9,11 @@ import Tag from "../Tag/Tag";
 import Infoblock from "../Infoblock/Infoblock";
 
 function CatalogList({ paginatedCampers, handleLoadMore, filteredCampers }) {
-  // Состояние для избранных с начальной загрузкой из localStorage
-  const [favorites, setFavorites] = useState(() => {
-    const savedFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
-    return savedFavorites;
-  });
+  const dispatch = useDispatch();
+  const favorites = useSelector((state) => state.campers.favorites);
 
-  // Обновляем localStorage при изменении favorites
-  useEffect(() => {
-    localStorage.setItem("favorites", JSON.stringify(favorites));
-  }, [favorites]);
-
-  // Обработчик для добавления/удаления из избранного
-  const toggleFavorite = (id) => {
-    setFavorites((prev) =>
-      prev.includes(id) ? prev.filter((favId) => favId !== id) : [...prev, id]
-    );
-  };
+  // Логирование favorites
+  console.log("Favorites:", favorites);
 
   return (
     <div className={css.container}>
@@ -31,10 +21,7 @@ function CatalogList({ paginatedCampers, handleLoadMore, filteredCampers }) {
         {paginatedCampers.map((camper) => (
           <li key={camper.id} className={css.item}>
             <div className={css.imagecontainer}>
-              <img
-                src={camper.gallery[0]?.thumb || "/placeholder.jpg"}
-                alt="automobile"
-              />
+              <img src={camper.gallery[0]?.thumb} alt="automobile" />
             </div>
             <div className={css.wrap}>
               <div>
@@ -46,7 +33,7 @@ function CatalogList({ paginatedCampers, handleLoadMore, filteredCampers }) {
                       className={`${css.heart} ${
                         favorites.includes(camper.id) ? css.saved : css.nosaved
                       }`}
-                      onClick={() => toggleFavorite(camper.id)}
+                      onClick={() => dispatch(toggleFavorite(camper.id))}
                     >
                       <svg style={{ width: "26px", height: "24px" }}>
                         <use href={`${sprite}#heart`} />

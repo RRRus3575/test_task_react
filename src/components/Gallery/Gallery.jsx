@@ -10,9 +10,9 @@ function Gallery({ camper }) {
         <p className={css.price}>&#8364;{camper.price.toFixed(2)}</p>
       </div>
       <ul className={css.list}>
-        {camper.gallery.map((img) => (
-          <li className={css.item}>
-            <img src={img.original} alt="automobile" />
+        {camper.gallery.map((img, index) => (
+          <li className={css.item} key={index}>
+            <img src={img.thumb} alt="automobile" />
           </li>
         ))}
       </ul>

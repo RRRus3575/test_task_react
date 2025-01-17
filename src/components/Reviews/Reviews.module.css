@@ -1,0 +1,33 @@
+.icon {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 600;
+  border-radius: 60px;
+  color: #e44848;
+  background-color: #f2f4f7;
+}
+.stars {
+  display: flex;
+  gap: 4px;
+}
+.stars li {
+  margin: 0;
+}
+.profile {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.comment {
+  color: #475467;
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+}

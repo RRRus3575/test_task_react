@@ -1,13 +1,17 @@
 .details {
   gap: 40px;
   margin-top: 60px;
+  margin-bottom: 80px;
 }
 .tabButtons {
   display: flex;
   margin-bottom: 44px;
   border-bottom: 1px solid #dadde1;
 }
-
+.featursandfeedback {
+  display: flex;
+  justify-content: space-between;
+}
 .tabButton {
   position: relative;
   width: 85px;
