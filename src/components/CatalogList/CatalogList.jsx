@@ -12,9 +12,6 @@ function CatalogList({ paginatedCampers, handleLoadMore, filteredCampers }) {
   const dispatch = useDispatch();
   const favorites = useSelector((state) => state.campers.favorites);
 
-  // Логирование favorites
-  console.log("Favorites:", favorites);
-
   return (
     <div className={css.container}>
       <ul className={css.list}>

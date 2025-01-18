@@ -6,3 +6,6 @@
   display: flex;
   gap: 64px;
 }
+.error img {
+  border-radius: 50px;
+}

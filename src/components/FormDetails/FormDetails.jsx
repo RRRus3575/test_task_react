@@ -1,10 +1,13 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 import css from "./FormDetails.module.css";
 import Button from "../Button/Button";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 function FormDetails() {
+  const dispatch = useDispatch();
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -25,8 +28,7 @@ function FormDetails() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Здесь можно выполнить действия с данными формы
-    console.log("Form Data:", formData);
+    dispatch(saveFormData(formData));
 
     setFormData({
       name: "",

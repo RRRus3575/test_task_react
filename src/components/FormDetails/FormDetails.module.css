@@ -38,3 +38,7 @@
 .input {
   height: 60px;
 }
+.textarea {
+  resize: none;
+  height: 118px;
+}

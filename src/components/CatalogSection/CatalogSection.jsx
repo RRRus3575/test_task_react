@@ -4,11 +4,16 @@ import { fetchCampers } from "../../store/campersSlice";
 import CatalogList from "../CatalogList/CatalogList";
 import Filters from "../Filters/Filters";
 import css from "./CatalogSection.module.css";
+import Loader from "../Loader/Loader";
 
 function CatalogSection() {
   const dispatch = useDispatch();
   // Получаем всех кемперов из Redux
   const campers = useSelector((state) => state.campers.campers);
+
+  const loading = useSelector((state) => state.campers.loading);
+
+  const error = useSelector((state) => state.campers.error);
 
   const [filters, setFilters] = useState({
     location: "",
@@ -69,11 +74,23 @@ function CatalogSection() {
       <h1 className="visually-hidden ">Catalog</h1>
       <div className={css.catalog}>
         <Filters onFilterChange={onFilterChange} />
-        <CatalogList
-          filteredCampers={filteredCampers}
-          handleLoadMore={handleLoadMore}
-          paginatedCampers={paginatedCampers}
-        />
+        {!loading && campers.length > 0 && (
+          <CatalogList
+            filteredCampers={filteredCampers}
+            handleLoadMore={handleLoadMore}
+            paginatedCampers={paginatedCampers}
+          />
+        )}
+        {loading && campers.length < 1 && (
+          <div>
+            <Loader />
+          </div>
+        )}
+        {error && (
+          <div className={css.error}>
+            <img src="/test_task_react/error.webp" />
+          </div>
+        )}
       </div>
     </section>
   );
