@@ -10,20 +10,6 @@
     />
 
     <title>TravelTrucks</title>
-    <script>
-      var pathname = window.location.pathname;
-      window.location.replace(
-        window.location.origin +
-          "/test_task_react" +
-          "/index.html?redirect=" +
-          pathname
-      );
-      const urlParams = new URLSearchParams(window.location.search);
-      const redirectPath = urlParams.get("redirect");
-      if (redirectPath) {
-        window.history.replaceState({}, document.title, redirectPath);
-      }
-    </script>
     <script type="module" crossorigin src="/test_task_react/assets/index-BdYpx4m-.js"></script>
     <link rel="stylesheet" crossorigin href="/test_task_react/assets/index-Bh43iSX_.css">
   </head>
