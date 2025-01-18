@@ -1,50 +1,51 @@
-# React + TypeScript + Vite
+# TravelTrucks 🛻
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**TravelTrucks** is a web application for booking campervans. It allows you to explore a catalog of campers, check their features and reviews, and book the one that suits you best.
 
-Currently, two official plugins are available:
+## 🚀 Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[View Demo](https://RRRus3575.github.io/test_task_react/)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## 📋 Project Description
 
-- Configure the top-level `parserOptions` property like this:
+### Key Features:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+1. **Camper Catalog** — Browse available campers with prices and descriptions.
+2. **Detailed Information** — Learn about each camper's features, such as:
+   - Transmission type
+   - Engine specifications
+   - Availability of kitchen, air conditioning, and other amenities
+3. **Reviews** — Check real user reviews and ratings for campers.
+4. **Favorites** — Add campers to your favorites list for quick access.
+5. **Booking** — Fill out a booking form to reserve your chosen camper.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+---
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## 🛠 Technologies
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- **React** — Library for building user interfaces
+- **Redux Toolkit** — State management for the application
+- **React Router** — Routing for the app
+- **Axios** — For API communication
+- **MockAPI** — Mock server for camper data
+- **CSS Modules** — Modular styling approach
+- **Vite** — Fast project bundling
+
+---
+
+## 📂 Project Structure
+
+src/  
+├── components/ # Reusable components  
+│ ├── Button/ # Button component  
+│ ├── CatalogList/ # Camper list component  
+│ ├── FormDetails/ # Booking form component  
+│ └── ... # Other components  
+├── pages/ # Application pages  
+│ ├── HomePage.jsx # Homepage  
+│ ├── CatalogPage.jsx # Catalog page  
+│ └── CamperDetailsPage.jsx # Camper details page  
+├── store/ # Redux store  
+└── App.jsx # Main application component
