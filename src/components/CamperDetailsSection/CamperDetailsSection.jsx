@@ -41,6 +41,10 @@ function CamperDetailsSections() {
     );
   }
 
+  if (error) {
+    return <img src="/test_task_react/hero_image.jpg" />;
+  }
+
   return (
     <div className="container">
       <h1 className="visually-hidden">Catalog details</h1>

@@ -84,7 +84,7 @@ function EquipmentFilter({ selectedOptions, onChange }) {
           Bathroom
         </label>
 
-        {/* Transmission filter */}
+        {/* Фильтры трансмиссии */}
         <label className={css.label}>
           <input
             type="checkbox"

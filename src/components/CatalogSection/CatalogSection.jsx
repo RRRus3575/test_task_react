@@ -43,10 +43,9 @@ function CatalogSection() {
         Array.isArray(filters.options) && filters.options.length > 0
           ? filters.options.every((option) => {
               if (option === "transmission:automatic") {
-                // Проверяем, что трансмиссия у кемпера автоматическая
                 return camper.transmission === "automatic";
               }
-              return camper[option] === true; // Проверяем другие опции
+              return camper[option] === true;
             })
           : true;
 
