@@ -70,7 +70,11 @@ function CatalogList({ paginatedCampers, handleLoadMore, filteredCampers }) {
           Load More
         </button>
       )}
-      {paginatedCampers.length === 0 && <p>No campers found.</p>}
+      {paginatedCampers.length === 0 && (
+        <div className={css.notfound}>
+          <img src="/test_task_react/not_found.webp" />
+        </div>
+      )}
     </div>
   );
 }

@@ -81,3 +81,9 @@
 .saved {
   color: #e44848;
 }
+.notfound {
+  width: 55%;
+}
+.notfound img {
+  border-radius: 30px;
+}

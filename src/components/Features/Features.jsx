@@ -13,7 +13,7 @@ function Features({ camper }) {
         {camper.kitchen && <Tag svg="kitchen" name="Kitchen" />}
         {camper.AC && <Tag svg="ac" name="AC" />}
         {camper.radio && <Tag svg="radio" name="Radio" />}
-        {camper.bathroom && <Tag svg="bathroom" name="Bathroom" />}
+        {camper.bathroom && <Tag svg="shower" name="Bathroom" />}
         {camper.refrigerator && <Tag svg="fridge" name="Refrigerator" />}
         {camper.microwave && <Tag svg="microwave" name="Microwave" />}
         {camper.gas && <Tag svg="gas" name="Gas" />}
